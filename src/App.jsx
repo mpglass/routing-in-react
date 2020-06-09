@@ -1,22 +1,28 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Home from './Pages/home';
+import Films from './Pages/Films';
 
 class App extends React.Component {
     render() {
         return (
             <BrowserRouter>
-            <nav className="nav justify-content-center p-3 shadow">
-                <h6>Michelle's Studio Ghibli Page</h6>
-            </nav>
-                <Switch>
-                    <Route exact path="/" component={ Home } />;
-                    <Route exact path="/films" component={() => <h1>Films</h1>} />;
-                    <Route exact path="/films/:id" component={() => <h1>Film Details</h1>} />;
-                    <Route exact path="/characters" component={() => <h1>Characters</h1>} />;
-                    <Route exact path="/characters/:id" component={() => <h1>Character Details</h1>} />;
-                    <Route path="*" component={() => <h1>404</h1>} />;
+                <nav className="nav justify-content-center p-3 shadow">
+                    <h6>Michelle's Studio Ghibli Page</h6>
+                </nav>
+                <main className="container">
+                    <section className="row mt-3 justify-content-center">
+                        <Switch>
+                            <Route exact path="/" component={Home} />;
+                            <Route exact path="/films" component={Films} />;
+                            <Route exact path="/films/:id" component={() => <h1>Film Details</h1>} />;
+                            <Route exact path="/characters" component={() => <h1>Characters</h1>} />;
+                            <Route exact path="/characters/:id" component={() => <h1>Character Details</h1>} />;
+                            <Route path="*" component={() => <h1>404</h1>} />;
                 </Switch>
+                    </section>
+                </main>
+
             </BrowserRouter >
         );
     }
