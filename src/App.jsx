@@ -2,6 +2,9 @@ import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Home from './Pages/home';
 import Films from './Pages/Films';
+import Characters from './Pages/Characters';
+import FilmDetails from './Components/FilmDetails';
+
 
 class App extends React.Component {
     render() {
@@ -15,8 +18,8 @@ class App extends React.Component {
                         <Switch>
                             <Route exact path="/" component={Home} />;
                             <Route exact path="/films" component={Films} />;
-                            <Route exact path="/films/:id" component={() => <h1>Film Details</h1>} />;
-                            <Route exact path="/characters" component={() => <h1>Characters</h1>} />;
+                            <Route exact path="/films/details/:id" component={FilmDetails} />;
+                            <Route exact path="/characters" component={Characters} />;
                             <Route exact path="/characters/:id" component={() => <h1>Character Details</h1>} />;
                             <Route path="*" component={() => <h1>404</h1>} />;
                 </Switch>
@@ -30,11 +33,3 @@ class App extends React.Component {
 
 export default App;
 
-// componentDidMount() {
-//     fetch("http://ghibliapi.herokuapp.com/films")
-//         .then(res => res.json())
-//         .then(json => { this.setState({ films: json }) })
-//     fetch("https://ghibliapi.herokuapp.com/people")
-//         .then(res => res.json())
-//         .then(json => { this.setState({ characters: json }) })
-// }
