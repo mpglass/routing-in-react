@@ -17,6 +17,7 @@ class Characters extends React.Component {
         const res = await fetch("http://ghibliapi.herokuapp.com/people");
         const characters = await res.json();
         this.setState({ characters });
+        console.log (characters);
     };
 
     render() {

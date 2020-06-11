@@ -1,5 +1,5 @@
 import React from 'react';
-import FilmDetails from '../Components/FilmDetails';
+import FilmsList from '../Components/FilmsList';
 
 class Films extends React.Component {
     constructor(props) {
@@ -16,14 +16,14 @@ class Films extends React.Component {
         const res = await fetch("http://ghibliapi.herokuapp.com/films");
         const films = await res.json();
         this.setState({ films });
+        console.log(films)
     };
 
     render() {
         return (
             <>
                 {this.state.films.map((film) => {
-                    return < FilmDetails key={`film-card-${film.id}`} film={film} />
-                    // return <FilmDetails film={film} />
+                    return < FilmsList key={`film-card-${film.id}`} film={film} />
                 })}
             </>
         );
