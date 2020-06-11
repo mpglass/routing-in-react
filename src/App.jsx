@@ -1,9 +1,9 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import Home from './Pages/home';
+import Home from './Pages/Home';
 import Films from './Pages/Films';
 import Characters from './Pages/Characters';
-import FilmDetails from './Components/FilmsList';
+import FilmPage from './Pages/FilmPage';
 import CharacterDetails from './Components/CharacterDetails';
 
 
@@ -19,7 +19,7 @@ class App extends React.Component {
                         <Switch>
                             <Route exact path="/" component={Home} />;
                             <Route exact path="/films" component={Films} />;
-                            <Route exact path="/films/:id" component={FilmDetails} />;
+                            <Route exact path="/films/filmpage/:id" component={FilmPage} />;
                             <Route exact path="/characters" component={Characters} />;
                             <Route exact path="/characters/:id" component={CharacterDetails} />;
                             <Route path="*" component={() => <h1>404</h1>} />;

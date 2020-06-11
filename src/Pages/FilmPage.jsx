@@ -1,25 +1,47 @@
 import React from 'react';
 
-class FilmsList extends React.Component {
+
+class FilmPage extends React.Component {
     constructor(props) {
-        super(props); 
+        super(props);
         this.state = {
-            film: {}
+            film: {},
+            title: '',
+            id: '',
+            description: '',
+            director: '',
+            producer: '',
+            release_date: '',
+            url: '',
         };
     }
 
     async componentDidMount() {
-        console.log(film)
+        const res = await fetch(`http://ghibliapi.herokuapp.com/films/${this.props.match.params.id}`);
+        const film = await res.json();
+        this.setState({ film });
     }
 
     render() {
+        const { title, description, director, producer, release_date } = this.state.film;
+
         return (
-            <div className="col-12">
-                <h2 className="display-2">Title</h2>
-                <button>Back to Films</button>
-                <button>Back to Home</button>
+            <div className="col-12 border p-3 rounded shadow-sm">
+                <h2 className="display-2 text-center">{title}</h2>
+                <div className="card-body text-center">
+                    <h6 className="card-text">{description}</h6>
+                    <div className="d-flex justify-content-between align-items-center mt-2">
+                        <h4 className="card-text">Director: {director}</h4>
+                        <h4 className="card-text">Producer: {producer}</h4>
+                    </div>
+                    <h5 className="card-text mt-2">Release Date: {release_date}</h5>
+                    <div className="d-flex justify-content-between align-items-center mt-5">
+                        <button>back to home</button>
+                        <button>back to films</button>
+                    </div>
+                </div>
             </div>
-        )
+        );
     }
 }
 

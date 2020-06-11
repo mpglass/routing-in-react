@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const FilmDetails = ({ film }) => {
-    console.log(film);
+const FilmsList = ({ film }) => {
+console.log(film.id)
     return (
         <div className="col-md-6">
-            <Link to={`/films/{film.id}`}>
+            <Link to={`/films/filmpage/${film.id}`}>
                 <div className="card my-2 shadow">
                     <div className="card-body text-center">
                         <h4 className="card-title">{film.title}</h4>
