@@ -4,7 +4,7 @@ import Home from './Pages/Home';
 import Films from './Pages/Films';
 import Characters from './Pages/Characters';
 import FilmPage from './Pages/FilmPage';
-import CharacterDetails from './Components/CharacterDetails';
+import CharacterDetails from './Pages/CharacterDetails';
 
 
 class App extends React.Component {
