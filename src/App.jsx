@@ -21,7 +21,7 @@ class App extends React.Component {
                             <Route exact path="/films" component={Films} />;
                             <Route exact path="/films/filmpage/:id" component={FilmPage} />;
                             <Route exact path="/characters" component={Characters} />;
-                            <Route exact path="/characters/:id" component={CharacterDetails} />;
+                            <Route exact path="/characters/characterdetails/:id" component={CharacterDetails} />;
                             <Route path="*" component={() => <h1>404</h1>} />;
                 </Switch>
                     </section>

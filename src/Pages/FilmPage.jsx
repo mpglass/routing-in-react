@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 
 class FilmPage extends React.Component {
@@ -36,8 +37,8 @@ class FilmPage extends React.Component {
                     </div>
                     <h5 className="card-text mt-2">Release Date: {release_date}</h5>
                     <div className="d-flex justify-content-between align-items-center mt-5">
-                        <button>back to home</button>
-                        <button>back to films</button>
+                        <Link to="/" className=" btn btn-outline-dark btn-lg shadow-sm">Back to Home</Link>
+                        <Link to="/films" className="btn btn-outline-dark btn-lg shadow-sm">Back to Films</Link>
                     </div>
                 </div>
             </div>
